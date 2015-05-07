@@ -27,7 +27,6 @@
 #   Released under the same terms as Sensu (the MIT license); see LICENSE
 #   for details.
 #
-
 require 'java'
 require 'pp'
 
@@ -79,8 +78,9 @@ def regionserver_info
 
   status = admin.getClusterStatus
   status.getServerInfo.map do |server|
-    { hostname: server.getServerAddress.getHostname,
-      regions: server.getLoad.getNumberOfRegions
+    {
+      :hostname => server.getServerAddress.getHostname,
+      :regions => server.getLoad.getNumberOfRegions
     }
   end
 end
@@ -88,15 +88,15 @@ end
 def check_threshold(info)
   case info[:regions]
   when config[:ok]..config[:warning]
-    { status: :ok, msg: "Regions: #{info.inspect}" }
+    { :status => :ok, :msg => "Regions: #{info.inspect}" }
   when config[:warning]..config[:critical]
-    { status: :warning, msg: "Regions: #{info.inspect}" }
+    { :status => :warning, :msg => "Regions: #{info.inspect}" }
   else
-    { status: :critical, msg: "Regions: #{info.inspect}" }
+    { :status => :critical, :msg => "Regions: #{info.inspect}" }
   end
 end
 
-@config = { ok: 0, warning: 900, critical: 1000 }
+@config = { :ok => 0, :warning => 900, :critical => 1000 }
 
 class Array
   def second
