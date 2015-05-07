@@ -1,4 +1,4 @@
-#! /usr/bin/env ruby
+#!/usr/bin/hbase org.jruby.Main
 #
 #   check-hbase-regions
 #
