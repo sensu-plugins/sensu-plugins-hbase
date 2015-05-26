@@ -9,11 +9,7 @@
 #   plain text
 #
 # PLATFORMS:
-#   Linux
-#
-# DEPENDENCIES:
-#   gem: pp
-#   gem: java
+#   Linux with jruby
 #
 # USAGE:
 #   #YELLOW

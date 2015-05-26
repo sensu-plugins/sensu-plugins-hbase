@@ -9,11 +9,7 @@
 #   plain text
 #
 # PLATFORMS:
-#   Linux
-#
-# DEPENDENCIES:
-#   gem: pp
-#   gem: java
+#   Linux with jruby
 #
 # USAGE:
 #   #YELLOW
@@ -27,6 +23,7 @@
 #   Released under the same terms as Sensu (the MIT license); see LICENSE
 #   for details.
 #
+
 require 'java'
 require 'pp'
 
