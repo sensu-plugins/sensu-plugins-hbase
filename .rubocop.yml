@@ -28,3 +28,6 @@ RegexpLiteral:
 
 Style/Documentation:
   Enabled: false
+
+Style/HashSyntax:
+  Enabled: false # done to allow 1.8 compliant syntax
