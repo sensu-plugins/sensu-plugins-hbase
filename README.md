@@ -1,6 +1,6 @@
 ## Sensu-Plugins-hbase
 
-[![Build Status](https://travis-ci.org/sensu-plugins/sensu-plugins-hbase.svg?branch=master)](https://travis-ci.org/sensu-plugins/sensu-plugins-hbase)
+[ ![Build Status](https://travis-ci.org/sensu-plugins/sensu-plugins-hbase.svg?branch=master)](https://travis-ci.org/sensu-plugins/sensu-plugins-hbase)
 [![Gem Version](https://badge.fury.io/rb/sensu-plugins-hbase.svg)](http://badge.fury.io/rb/sensu-plugins-hbase)
 [![Code Climate](https://codeclimate.com/github/sensu-plugins/sensu-plugins-hbase/badges/gpa.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-hbase)
 [![Test Coverage](https://codeclimate.com/github/sensu-plugins/sensu-plugins-hbase/badges/coverage.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-hbase)
