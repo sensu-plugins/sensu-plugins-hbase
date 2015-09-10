@@ -34,6 +34,7 @@ include_class('java.lang.Boolean') { |_package, name| "J#{name}" }
 
 import org.apache.hadoop.hbase.client.HBaseAdmin
 import org.apache.hadoop.hbase.client.HTable
+import org.apache.hadoop.hbase.client.RetriesExhaustedException
 import org.apache.hadoop.hbase.HBaseConfiguration
 import org.apache.hadoop.hbase.util.Bytes
 import org.apache.log4j.Logger
@@ -72,8 +73,12 @@ include SensuUtils
 def check_hbase_status
   conf  = HBaseConfiguration.new
   admin = HBaseAdmin.new(conf)
-
-  status = admin.getClusterStatus
+  
+  begin
+    status = admin.getClusterStatus
+  rescue org.apache.hadoop.hbase.client.RetriesExhaustedException
+    critical 'Hbase-master not running. Retries Exhausted'
+  end
   dead_servers = status.getDeadServerNames
 
   count = dead_servers.length
