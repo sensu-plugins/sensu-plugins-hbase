@@ -73,11 +73,11 @@ include SensuUtils
 def check_hbase_status
   conf  = HBaseConfiguration.new
   admin = HBaseAdmin.new(conf)
- 
+
   begin
     status = admin.getClusterStatus
   rescue org.apache.hadoop.hbase.client.RetriesExhaustedException
-    critical 'Hbase-master not running. Retries Exhausted'
+    critical 'Hbase-master not running. Retries exhausted contacting master'
   end
   dead_servers = status.getDeadServerNames
 
