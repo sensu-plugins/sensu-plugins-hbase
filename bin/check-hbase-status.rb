@@ -73,7 +73,7 @@ include SensuUtils
 def check_hbase_status
   conf  = HBaseConfiguration.new
   admin = HBaseAdmin.new(conf)
-  
+ 
   begin
     status = admin.getClusterStatus
   rescue org.apache.hadoop.hbase.client.RetriesExhaustedException
